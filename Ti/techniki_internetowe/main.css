@@ -1,0 +1,156 @@
+/*Background gradient and body specification*/
+body
+{
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 19%, rgba(0,212,255,1) 79%, rgba(255,255,255,1) 100%);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+/*First header css - Bartosz Konopka*/
+div.first_header
+{
+   
+    background-color: transparent;
+    border-radius: 25px;
+    border: 3px solid rgba(0,212,255,1);
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+span.first_header_text
+{
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 50px;
+    letter-spacing: 1px;
+    word-spacing: 5.4px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+/*Second header css - Home page*/
+span.second_header_text
+{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    word-spacing: 5.4px;
+    font-weight: italic;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+/*Description*/
+div.description
+{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    opacity: .5;
+}
+
+span.description_header
+{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    letter-spacing: .25px;
+    word-spacing: 5.4px;
+    font-weight: italic;
+}
+
+span.description_text
+{
+    font-size: 18px;
+}
+
+/*List*/
+div.list
+{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(0, 0, 0);
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    opacity: .5;
+}
+
+span.list_header
+{
+    font-family: "Times New Roman", Times, serif;
+    font-size: 25px;
+    letter-spacing: .25px;
+    word-spacing: 5.4px;
+    font-weight: italic;
+}
+
+span.list_text
+{
+    font-size: 18px;
+}
+
+/*Links edition*/
+a:link
+{
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+a:visited
+{
+    font-size: 18px;
+    color: rgb(136, 0, 82);
+    text-decoration: underline;
+}
+
+a:hover
+{
+    font-size: 18px;
+    text-decoration: underline;
+    letter-spacing: .5px;
+    word-spacing: 5.4px;
+    background-color: rgba(0,212,255,1);
+    border-radius: 25px;
+    margin: 5px;
+    padding: 5px;
+}
+
+a:active
+{
+    font-size: 18px;
+    text-decoration: underline;
+    letter-spacing: .5px;
+    word-spacing: 5.4px;
+    background-color: rgba(0,212,255,1);
+    border-radius: 25px;
+    margin: 5px;
+    padding: 5px;
+}
+
+/*Footer*/
+footer
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+span.footer_text
+{
+    font-size: 15px;
+    text-decoration: italic;
+    text-align: left;
+}
