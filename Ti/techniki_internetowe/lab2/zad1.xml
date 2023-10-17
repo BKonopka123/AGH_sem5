@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/css" href="data.css"?>
+<!DOCTYPE biblioteka SYSTEM "/home/stud2021/1konopka/public_html/techniki_internetowe/lab2/zad1_dtd.dtd">
+
+<biblioteka xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/home/stud2021/1konopka/public_html/techniki_internetowe/lab2/zad1_schema.xsd">
+
+  <dzial>
+  
+    <nazwa>
+      Fantastyka
+    </nazwa>
+    
+    <ksiazka>
+      
+      <autor1>
+        <imie>
+          Adam
+        </imie>
+        <nazwisko>
+            Malysz
+        </nazwisko>
+      </autor1>
+      
+      <tytul>
+        Abcdef
+      </tytul>
+      
+      <cena>
+        120
+      </cena>
+      
+    </ksiazka>
+    
+    <ksiazka>
+      
+      <autor1>
+        <imie>
+          Janusz
+        </imie>
+        <nazwisko>
+        Pudzianowski
+        </nazwisko>
+      </autor1>
+      
+        <autor2>
+        <imie>
+          John
+        </imie>
+        <nazwisko>
+          Malloy
+        </nazwisko>
+      </autor2>
+      
+      <tytul>
+      Ghijklm
+      </tytul>
+      
+      <cena>
+        150
+      </cena>
+      
+    </ksiazka>
+    
+  </dzial>
+
+  <dzial>
+  
+    <nazwa>
+    Horror
+    </nazwa>
+    
+    <ksiazka>
+      
+      <autor1>
+        <imie>
+          Dorota
+        </imie>
+        <nazwisko>
+          Wellman
+        </nazwisko>
+      </autor1>
+      
+      <tytul>
+      adwewewe
+      </tytul>
+        
+      <cena>
+           90
+      </cena>
+  
+    </ksiazka>
+    
+  </dzial>
+
+  <dzial>
+  
+    <nazwa>
+      Kryminal
+    </nazwa>
+    
+    <ksiazka>
+      
+      
+      <tytul>
+        fdgrgbcbvtfb
+      </tytul>
+      
+      <cena>
+        80
+      </cena>
+      
+    </ksiazka>
+    
+  </dzial>
+  
+</biblioteka>

@@ -1,0 +1,12 @@
+<!DOCTYPE biblioteka [
+<!ELEMENT biblioteka (dzial+)>
+<!ELEMENT dzial (nazwa, ksiazka+)>
+<!ELEMENT nazwa (#PCDATA)>
+<!ELEMENT ksiazka (autor1?, autor2?, tytul, cena)>
+<!ELEMENT autor1 (imie, nazwisko)>
+<!ELEMENT imie (#PCDATA)>
+<!ELEMENT nazwisko (#PCDATA)>
+<!ELEMENT tytul (#PCDATA)>
+<!ELEMENT cena (#PCDATA)>
+<!ELEMENT autor2 (imie, nazwisko)>
+]>
