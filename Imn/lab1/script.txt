@@ -1,0 +1,1 @@
+g++ -o a.out cpp/main.cpp `gsl-config --cflags --libs` && ./a.out && python3 pyt/main.py
