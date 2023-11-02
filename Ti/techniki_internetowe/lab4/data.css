@@ -1,0 +1,61 @@
+.main
+{
+    display: block;
+    border-style: double;
+    padding: 1px 1px;
+    width: 700px;
+}
+
+.biblioteka
+{
+    display: block;
+    border-style: solid;
+    border-width: thin;
+    margin: 1px;
+    padding: 1px;
+    width:100%;
+    table-layout: fixed;
+    padding: auto;
+    margin: auto;
+    width: auto;
+    font-weight: bold;
+    font-size: 7px;
+    text-align: center;
+    background-color:rgb(56, 138, 206);
+}
+
+.dzial 
+{
+    text-align: center;
+    font-weight: bold;
+    margin: 1px;
+    padding: 1px;
+    font-size: 7px;
+    display: block;
+    border-style: solid;
+    border-width: thin;
+    width: auto;
+    background-color: rgb(227, 227, 227);
+    color:blueviolet;
+}
+
+
+table
+{
+    margin: 1px;
+    padding: 1px;
+    display: flexbox;
+    border-style: solid;
+    border-width: thin;
+    text-align: left;
+    width: 700px;
+
+}
+
+th
+{
+    width:100%;
+    background-color:bisque;
+    font-size: 10px;
+    width: auto;
+}

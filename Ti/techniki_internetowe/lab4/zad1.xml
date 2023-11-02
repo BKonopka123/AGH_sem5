@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="zad1schema.xsl"?>
+<biblioteka>
+
+  <dzial>  
+    <nazwa>
+      Nauka
+    </nazwa>
+
+    <elementt>
+      <ksiazka>
+        <tytul>
+          Podstawy Fizyki 1
+        </tytul>
+        <autor1>
+          <imie>
+            David
+          </imie>
+          <nazwisko>
+            Holliday
+          </nazwisko>
+        </autor1>
+        <autor2>
+          <imie>
+            Robert
+          </imie>
+          <nazwisko>
+            Resnick
+          </nazwisko>
+        </autor2>
+        <cena>
+          100
+        </cena>      
+      </ksiazka>
+    </elementt>
+
+    <elementt>
+      <ksiazka>
+        <tytul>
+          Szkola programowania C
+        </tytul>
+        <autor1>
+          <imie>
+            Stephen
+          </imie>
+          <nazwisko>
+            Prata
+          </nazwisko>
+        </autor1>
+        <cena>
+          100
+        </cena>
+      </ksiazka>
+    </elementt>
+
+    <elementt>
+      <ksiazka>
+        <tytul>
+          Podstawy fizyki 2
+        </tytul>
+        <autor1>
+          <imie>
+            David
+          </imie>
+          <nazwisko>
+            Holliday
+          </nazwisko>
+        </autor1>
+        <autor2>
+          <imie>
+            Robert
+          </imie>
+          <nazwisko>
+            Resnick
+          </nazwisko>
+        </autor2>
+        <cena>
+          100
+        </cena>
+      </ksiazka>
+    </elementt>
+  </dzial>
+
+  <dzial>  
+    <nazwa>
+    Dla dzieci
+    </nazwa>
+    
+    <elementt>
+      <ksiazka>      
+        <tytul>
+          Kubus puchatek
+        </tytul>
+        <autor1>
+          <imie>
+            Alan Alexander
+          </imie>
+          <nazwisko>
+            Milne
+          </nazwisko>
+        </autor1>
+        <cena>
+          100
+        </cena>
+      </ksiazka>
+    </elementt>
+
+    <elementt>
+      <ksiazka>       
+        <tytul>
+          Podroze Pana kleksa
+        </tytul>
+        <autor1>
+          <imie>
+            Jan
+          </imie>
+          <nazwisko>
+            Brzechwa
+          </nazwisko>
+        </autor1>
+        <cena>
+          100
+        </cena>
+      </ksiazka>
+    </elementt>
+
+    <elementt>
+      <ksiazka>
+        <tytul>
+          Przygody alicji w krainie czarow
+        </tytul>
+        <autor1>
+          <imie>
+            Lewis
+          </imie>
+          <nazwisko>
+            Carrol
+          </nazwisko>
+        </autor1>
+        <cena>
+          100
+        </cena>
+      </ksiazka>
+    </elementt>
+
+    <elementt>
+      <ksiazka>      
+        <tytul>
+          Akademia Pana Kleksa
+        </tytul>
+        <autor1>
+          <imie>
+            Jan
+          </imie>
+          <nazwisko>
+            Brzechwa
+          </nazwisko>
+        </autor1>
+        <cena>
+          100
+        </cena>
+      </ksiazka>
+    </elementt>
+  </dzial>
+  
+</biblioteka>
