@@ -1,0 +1,88 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+div.box{
+    display: block;
+    border: 2px solid;
+    border-color: rgb(156, 156, 156);
+    width: 400px;
+    margin: 10px;
+    margin-top:30px;
+    padding: 10px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-bottom: 0px;
+}
+
+div.header_one{
+    width: 100px;
+    font-size: 10px;
+    display: block;
+    border: 5px solid;
+    border-color: rgb(156, 156, 156);
+    margin-top: -30px;
+    margin-left: -20px;
+    padding-left: 2px;
+    color: rgb(147, 29, 147);
+    background-color: rgb(208, 208, 208);
+    text-align: center;
+}
+
+div.inner_box{
+    display: block;
+    border: 2px solid;
+    border-color: rgb(34, 24, 139);
+    background-color: rgb(16, 210, 181);
+    width: 300px;
+    margin: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+div.click{
+    margin-left: -30px;
+}
+
+div.text_box{
+    display: block;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+div.header_two{
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+table{
+    width: 900px; 
+    margin-left: auto; 
+    margin-right: auto; 
+    border: 1px solid #000;
+}
+
+td{
+    width:100%;
+    background-color:rgb(117, 209, 235);
+    font-size: 10px;
+    width: auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+tr:nth-child(2n+1){
+    width:100%;
+    background-color:rgb(233, 174, 234);
+    font-size: 10px;
+    width: auto;
+}
+
+tr:nth-child(2n){
+    width:100%;
+    background-color:rgb(176, 242, 181);
+    font-size: 10px;
+    width: auto;
+}
+
