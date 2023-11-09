@@ -110,95 +110,85 @@ insert into kara(opoznienie_min, kwota, opoznienie_max) values (15, 20, 21);
 insert into kara(opoznienie_min, kwota, opoznienie_max) values (22, 30, 10000);
  
 --a
-SELECT MAX(wypozyyczone_ksiazki) - MIN(wypozyyczone_ksiazki) AS roznica
+SELECT MAX(wypozyczone_ksiazki) - MIN(wypozyczone_ksiazki) AS roznica 
 FROM (
-    SELECT c.czytelnik_id, COUNT(DISTINCT wc.ksiazka_id) AS wypozyyczone_ksiazki
-    FROM czytelnik c JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
+    SELECT c.czytelnik_id, COUNT(DISTINCT wc.ksiazka_id) AS wypozyczone_ksiazki
+    FROM czytelnik c JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id 
     JOIN wc ON w.wypozyczenie_id = wc.wypozyczenie_id
     GROUP BY c.czytelnik_id HAVING COUNT(DISTINCT wc.ksiazka_id) > 0
 );
 
 --b
-SELECT DISTINCT k.tytul FROM ksiazki k JOIN wc ON k.ksiazka_id = wc.ksiazka_id
-WHERE wc.wypozyczenie_id IN (
+SELECT DISTINCT k.tytul 
+FROM ksiazki k JOIN wc ON k.ksiazka_id = wc.ksiazka_id 
+WHERE wc.wypozyczenie_id IN(
     SELECT w.wypozyczenie_id
-    FROM ksiazki k JOIN wc ON k.ksiazka_id = wc.ksiazka_id
-    JOIN wypozyczenie w ON wc.wypozyczenie_id = w.wypozyczenie_id
+    FROM wypozyczenie w JOIN wc ON w.wypozyczenie_id  = wc.wypozyczenie_id 
+    JOIN ksiazki k ON wc.ksiazka_id = k.ksiazka_id 
     WHERE k.tytul = 'ffff'
-)
-AND k.tytul != 'ffff';
+) AND k.tytul != 'ffff';
 
 --c
 SELECT DISTINCT c.imie, c.nazwisko
-FROM czytelnik c
-JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
-JOIN wc ON w.wypozyczenie_id = wc.wypozyczenie_id
-WHERE wc.ksiazka_id IN (
-    SELECT ksiazka_id
-    FROM wc
-    JOIN wypozyczenie w ON wc.wypozyczenie_id = w.wypozyczenie_id
-    WHERE w.czytelnik_id = 1
-)
-AND c.czytelnik_id != 1;
+FROM czytelnik c JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
+JOIN wc ON wc.wypozyczenie_id = w.wypozyczenie_id
+WHERE wc.ksiazka_id IN(
+    SELECT DISTINCT wc.ksiazka_id
+    FROM czytelnik c JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
+    JOIN wc ON wc.wypozyczenie_id = w.wypozyczenie_id
+    WHERE c.czytelnik_id = 1
+) AND c.czytelnik_id != 1;
 
 --d
-SELECT k.tytul, COUNT(DISTINCT c.czytelnik_id) AS liczba_czytelnikow
-FROM ksiazki k
-JOIN wc ON k.ksiazka_id = wc.ksiazka_id
+SELECT k.tytul, COUNT(DISTINCT w.czytelnik_id) AS liczba_czytelnikow
+FROM ksiazki k JOIN wc ON k.ksiazka_id = wc.ksiazka_id
 JOIN wypozyczenie w ON wc.wypozyczenie_id = w.wypozyczenie_id
-JOIN czytelnik c ON w.czytelnik_id = c.czytelnik_id
-GROUP BY k.ksiazka_id
-ORDER BY liczba_czytelnikow DESC
-LIMIT 1;
+GROUP BY k.ksiazka_id 
+ORDER BY liczba_czytelnikow DESC LIMIT 1;
 
 --e
-SELECT c.imie, c.nazwisko, COUNT(wc.ksiazka_id) AS ilosc
+SELECT c.imie, c.nazwisko, (
+    SELECT COUNT(wc.ksiazka_id) AS ilosc_ksiazek_na_wypozyczenie
+    FROM wypozyczenie w
+    JOIN wc ON w.wypozyczenie_id = wc.wypozyczenie_id
+    WHERE c.czytelnik_id = w.czytelnik_id
+    GROUP BY w.wypozyczenie_id
+    ORDER BY ilosc_ksiazek_na_wypozyczenie DESC
+    LIMIT 1
+) AS ilosc_ksiazek_na_wypozyczenie 
 FROM czytelnik c JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
 JOIN wc ON w.wypozyczenie_id = wc.wypozyczenie_id
-GROUP BY c.czytelnik_id, c.imie, c.nazwisko, w.wypozyczenie_id
-HAVING COUNT(wc.ksiazka_id) = (
-    SELECT MAX(books_per_loan)
-    FROM (
-        SELECT COUNT(wc.ksiazka_id) AS books_per_loan
-        FROM wypozyczenie w
-        JOIN wc ON w.wypozyczenie_id = wc.wypozyczenie_id
-        GROUP BY w.wypozyczenie_id
-    )
-)
-LIMIT 1;
+ORDER BY ilosc_ksiazek_na_wypozyczenie DESC LIMIT 1;
 
 --f
-SELECT c.czytelnik_id, COUNT(DISTINCT w.wypozyczenie_id) AS liczba_wypozyczen,
-COUNT(DISTINCT w.wypozyczenie_id) * 100.0 / (SELECT COUNT(DISTINCT wypozyczenie_id) FROM wypozyczenie) AS procent_udzialu
-FROM czytelnik c
-JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
-GROUP BY c.czytelnik_id
-ORDER BY c.czytelnik_id;
+SELECT c.czytelnik_id, (
+    COUNT(DISTINCT w.wypozyczenie_id) * 100.0 / (
+        SELECT COUNT(DISTINCT wypozyczenie_id) FROM wypozyczenie
+    )
+) AS procentowy_udzial
+FROM czytelnik c JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
+GROUP BY c.czytelnik_id;
 
 --g
-SELECT c.imie, c.nazwisko
-FROM czytelnik c
-JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
-WHERE w.data_zwrotu - w.data_wypozyczenia > (
-    SELECT AVG(data_zwrotu - data_wypozyczenia)
+SELECT DISTINCT c.imie, c.nazwisko 
+FROM czytelnik c JOIN wypozyczenie w ON c.czytelnik_id=w.czytelnik_id
+WHERE w.data_zwrotu IS NOT NULL 
+AND w.data_zwrotu - w.data_wypozyczenia > (
+    SELECT AVG(data_zwrotu - w.data_wypozyczenia)
     FROM wypozyczenie
 );
 
 --h
-SELECT c.imie, c.nazwisko, (
-    SELECT k.tytul FROM ksiazki k JOIN wc ON k.ksiazka_id = wc.ksiazka_id
-    JOIN wypozyczenie w ON wc.wypozyczenie_id = w.wypozyczenie_id
-    WHERE c.czytelnik_id = w.czytelnik_id AND data_zwrotu IS NOT NULL
-    ORDER BY w.data_zwrotu - w.data_wypozyczenia DESC
+SELECT DISTINCT c.czytelnik_id, (
+    SELECT (w.data_zwrotu - w.data_wypozyczenia) AS czas_przetrzymania
+    FROM wypozyczenie w
+    WHERE w.czytelnik_id=c.czytelnik_id
+    AND data_zwrotu IS NOT NULL
+    ORDER BY czas_przetrzymania DESC
     LIMIT 1
-) AS najdluzej_przetrzymana, (
-    SELECT w.data_zwrotu - w.data_wypozyczenia FROM ksiazki k JOIN wc ON k.ksiazka_id = wc.ksiazka_id
-    JOIN wypozyczenie w ON wc.wypozyczenie_id = w.wypozyczenie_id
-    WHERE c.czytelnik_id = w.czytelnik_id AND data_zwrotu IS NOT NULL
-    ORDER BY w.data_zwrotu - w.data_wypozyczenia DESC
-    LIMIT 1
-) AS ilosc_dni
-FROM czytelnik c;
+) AS najdluzsze_przetrzymanie
+FROM czytelnik c JOIN wypozyczenie w ON c.czytelnik_id = w.czytelnik_id
+JOIN wc ON wc.wypozyczenie_id = w.wypozyczenie_id;
 
 --i 
 SELECT c.imie, c.nazwisko 
