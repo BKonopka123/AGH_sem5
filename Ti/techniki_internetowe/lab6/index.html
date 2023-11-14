@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<title>Lab6</title>
+
+<style type="text/css">
+#main_form{
+    display: block;
+    border: 2px solid;
+    border-color: rgb(81, 12, 243);
+    width: 600px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#box1{
+    display: block;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+    width: 600px;
+    height: 600px;
+    padding: 10px;
+    margin: 10px;
+}
+</style>
+
+<script type="application/javascript">
+
+    function validate() {
+        var x = document.forms.form1.Wspolrzedne_srodka_x.value;
+        var y = document.forms.form1.Wspolrzedne_srodka_y.value;
+        var r = document.forms.form1.Promien.value;
+        var c = document.forms.form1.Kolor.value;
+        if (x == "" || y == "" || r == "" || c == "") {
+            alert("Wszystkie pola musza byc wypelnione");
+            return false;
+        }
+        else if (isNaN(x) || isNaN(y) || isNaN(r)) {
+            alert("Wspolrzedne srodka i promien musza byc liczbami");
+            return false;
+        }
+        else if (x < 0 || x > 600 || y < 0 || y > 600 || r < 0 || r > 300) {
+            alert("Wspolrzedne srodka musza byc z przedzialu [0, 600], a promien [0, 300]");
+            return false;
+        }
+        else if (parseFloat(x)-parseFloat(r) < 0 || parseFloat(y)-parseFloat(r) < 0 || parseFloat(x)+parseFloat(r) > 600 || parseFloat(y)+parseFloat(r) > 600){
+            alert("Kolo wychodzi za obszar rysunku!");
+            return false;
+        }
+        else {
+            rysuj(x,y,r,c);
+            return false;
+        }
+    }
+
+    function rysuj(x,y,r,c) {
+        var canvas = document.getElementById("canvas1");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, 2 * Math.PI);
+            ctx.fillStyle = c;
+            ctx.fill();
+        }
+
+        var tekst = "<svg height='600' width='600'><circle cx='" + x + "' cy='" + y + "' r='" + r + "' fill='" + c + "' /></svg>";
+        document.getElementById("svg1").innerHTML = tekst;
+    }
+</script>
+</head>
+
+<body> 
+<div id="main_form">
+    <form name="form1" onsubmit="return validate()">
+        <table>
+        <tr>
+            <td><label for="Wspolrzedne_srodka_x">Wspolrzedne srodka</label></td>
+            <td><input type="text" id="Wspolrzedne_srodka_x" name="Wspolrzedne_srodka_x"></td>
+            <td><input type="text" id="Wspolrzedne_srodka_y" name="Wspolrzedne_srodka_y"></td>
+        </tr>
+        <tr>
+            <td><label for="Promien">Promien</label></td>
+            <td><input type="text" id="Promien" name="Promien"></td>
+        </tr>
+        <tr>
+            <td><label for="Kolor">Kolor</label></td>
+            <td><input type="color" id="Kolor" name="Kolor" value="#e66465" /></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="Submit" value="Wykonaj" /></td>
+        </tr>
+        </table>
+    </form>
+</div>
+
+<div id="box1">
+<canvas id="canvas1" width="600" height="600"></canvas>
+</div>
+
+<div id="box1">
+<div id="svg1"></div>
+</div>
+
+</body>
+</html>
