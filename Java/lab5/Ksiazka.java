@@ -1,0 +1,1 @@
+record Ksiazka(int ksiazka_id, String tytul, String autor){}

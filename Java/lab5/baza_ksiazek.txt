@@ -1,0 +1,10 @@
+aaaaa;Adam Mickiewicz
+bbbbb;Adam Mickiewicz
+ccccc;Jan Kochanowski
+ddddd;Jan Brzechwa
+eeeee;Adam Malysz
+fffff;Janusz Zlodziej
+ggggg;Mateusz Baranowski
+hhhhh;Jan Kochanowski
+iiiii;Wislawa Szymborska
+jjjjj;Adam Malyszs
