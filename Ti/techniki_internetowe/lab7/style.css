@@ -1,0 +1,24 @@
+#box1{
+    display: block;
+    margin: 20px;
+    padding: 10px;
+    width: 500px;
+    border: 1px solid;
+    border-color: rgb(114, 114, 114);
+}
+
+#box2{
+    display: block;
+    margin: 5px;
+    padding: 5px;
+    margin-top: -25px;
+    margin-left: -5px;
+    background-color: white;
+    width: 200px;
+}
+
+#histogram{
+    display: block;
+    width: 500px;
+    height: 20px;
+}

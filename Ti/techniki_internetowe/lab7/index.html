@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Ajax - lab7</title>
+      <script src="script.js" type="text/javascript"></script>
+      <link rel="StyleSheet" href="style.css" type="text/css">
+   </head>
+   <body>
+      <div id="box1">
+
+         <div id="box2">
+            Quiz: Ktora pore roku lubisz?
+         </div>
+
+        <form id='recordForm1'>
+            <input type="radio" id="wiosna" name="x" value="1">
+            <label for="wiosna"> Wiosna</label><br>
+            <input type="radio" id="lato" name="x" value="1">
+            <label for="lato"> Lato</label><br>
+            <input type="radio" id="jesien" name="x" value="1">
+            <label for="jesien"> Jesien</label><br>
+            <input type="radio" id="zima" name="x" value="1">
+            <label for="zima"> Zima</label><br>
+            <input type="button" value="Wyslij" onclick="sendRequest()"/>
+        </form>
+      
+        <canvas id = 'canvas' width='500' height='500'>
+               
+        </canvas>
+
+         <div id="histogram">
+
+         </div>
+
+      </div>
+   </body>
+</html>
