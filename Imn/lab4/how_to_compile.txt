@@ -1,0 +1,4 @@
+Aby skompilować prograam należy w będąc aktualnie w folderze z plikiem script.txt, włączyć plik script.txt za pomocą komendy ./script.txt
+Zdjęcia wykresów i pliki txt z wynikami zostaną wygenerowane skryptem w pythonie, program oblcizający wyniki napisany jest w c++ z użyciem biblioteki gsl
+Z wyrazami szacunku
+Bartosz Konopka

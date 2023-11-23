@@ -1,0 +1,1 @@
+g++ -O4 cpp/main.cpp && ./a.out -O4 && python3 pyt/main.py
