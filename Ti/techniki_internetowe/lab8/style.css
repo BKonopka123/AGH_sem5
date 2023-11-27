@@ -1,0 +1,33 @@
+body{
+    background-color: #f0f0f0;
+}
+
+#main_box{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+#header_one{
+    width: 100%;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-size: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#main_page_links_box{
+    display: block;
+    background-color: #f0f0f0;
+    margin: 10px;
+    padding: 10px;
+}
+
+#main_page_links{
+    width: 100%;
+    background-color: #f0f0f0;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
