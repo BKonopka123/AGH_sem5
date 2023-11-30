@@ -1,0 +1,3 @@
+interface AdressFormatter {
+    String getFormattedAdress();
+}
