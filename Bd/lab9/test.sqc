@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "test.h"
+ 
+EXEC SQL include sqlca;
+EXEC SQL whenever sqlwarning sqlprint;
+EXEC SQL whenever sqlerror do Prnt();
+ 
+void Prnt()
+{
+   fprintf(stderr, "*******************************************\n");
+   fprintf(stderr, "Fatal Error\n");
+   sqlprint();
+   fprintf(stderr, "*******************************************\n");
+}
+ 
+EXEC SQL BEGIN DECLARE SECTION;
+    char db[150];
+    char usr[15];
+    char pas[15];
+    char dbname[1024];
+    int czytelnik_id;
+    int czytelnik_id_number;
+    char nazwisko[20];
+    char imie[20];
+    char imiona[100][100][20];
+    char nazwiska[100][100][20];
+    char tytul[20];
+    char lista_ksiazek[100][20];
+    int ilosc_wypozyczen[20];
+    int wypozyczenie_tmp;
+EXEC SQL END DECLARE SECTION;
+ 
+int main(int argc, char* argv[])
+{
+    strncpy(db,dbase,150);
+    strncpy(usr,user,15);
+    strncpy(pas,pass,15);
+    //ECPGdebug(1,stderr);
+    EXEC SQL CONNECT TO :db AS con1  USER :usr USING :pas;
+ 
+    EXEC SQL SELECT current_database() INTO :dbname;
+    //printf("current database=%s \n", dbname);
+
+    czytelnik_id_number = atoi(argv[1]);
+
+    EXEC SQL 
+        DECLARE c1 CURSOR FOR
+        SELECT DISTINCT k.tytul
+        FROM czytelnik c 
+        JOIN wypozyczenie w USING(czytelnik_id) 
+        JOIN wc wc USING(wypozyczenie_id)
+        JOIN ksiazki k USING(ksiazka_id)
+        WHERE czytelnik_id=:czytelnik_id_number;
+    
+    EXEC SQL OPEN c1;
+
+    int i=0;
+    while(sqlca.sqlcode == 0){
+        EXEC SQL FETCH c1 INTO :tytul;
+        if(SQLCODE == 0){ 
+            strcpy(lista_ksiazek[i],tytul);
+            i++;
+        }
+    }
+    int ilosc_ksiazek = i;
+
+    EXEC SQL CLOSE c1;
+
+    for(int i=0; i<ilosc_ksiazek; i++){
+        EXEC SQL 
+            DECLARE c2 CURSOR FOR
+            SELECT COUNT(DISTINCT c.czytelnik_id) AS liczba_czytelnikow, c.imie, c.nazwisko
+            FROM czytelnik c
+            JOIN wypozyczenie w USING(czytelnik_id)
+            JOIN wc wc USING(wypozyczenie_id)
+            JOIN ksiazki k USING(ksiazka_id)
+            WHERE k.tytul = :lista_ksiazek[i]
+            GROUP BY c.czytelnik_id, c.imie, c.nazwisko;
+        
+        ilosc_wypozyczen[i]=0;
+        int j=0;
+        EXEC SQL OPEN c2;
+        while(sqlca.sqlcode == 0){
+            wypozyczenie_tmp = 0;
+            EXEC SQL FETCH c2 INTO :wypozyczenie_tmp, :imie, :nazwisko;
+            if(SQLCODE == 0){ 
+                ilosc_wypozyczen[i]+=wypozyczenie_tmp;
+                strcpy(imiona[i][j],imie);
+                strcpy(nazwiska[i][j],nazwisko);
+                j++;
+            }
+        }
+        EXEC SQL CLOSE c2;
+    }
+
+    printf("[");
+    for(int i=0; i<ilosc_ksiazek; i++){
+        printf("{");
+        printf("\"tytul\": \"%s\",\"ilosc_czytelnikow\": %d, \"czytelnicy\": ",lista_ksiazek[i], ilosc_wypozyczen[i]);
+        for(int j=0; j<ilosc_wypozyczen[i]; j++){
+            printf("{\"imie\": \"%s\", \"nazwisko\": \"%s\"}",imiona[i][j],nazwiska[i][j]);
+            if(j != ilosc_wypozyczen[i]-1)
+                printf(",");
+        }
+        if(i != ilosc_ksiazek-1)
+            printf("},\n");
+    }
+    printf("]\n");
+ 
+    EXEC SQL DISCONNECT ALL;
+    return 0;
+}

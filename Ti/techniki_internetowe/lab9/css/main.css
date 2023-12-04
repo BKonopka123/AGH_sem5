@@ -1,0 +1,19 @@
+body  { width:860px; }
+header { width:858px; height: 80px; text-align:center }
+  
+nav { height : 500px; width:200px; float:left;  }
+nav p { padding:5px; margin:0px }
+ 
+section { display:block; float:left; height:500px; width:656px; color:navy; }
+section header { font-weight: bold;  text-align:center; width:656px; height:20px; }
+section h1 { color:navy; font-size:12pt; text-align:center }
+section h2 { color:green; font-size:12pt; text-align:center}
+section p.italic { font-style:italic }
+ 
+footer { clear:both; text-align:center; color:blue }
+ 
+dt { font-weight: bold; }
+dd { font-style: italic; }
+div.main { padding-left: 15px; }
+p.point { font-weight: bold; }
+p.text { padding-left: 30px; }
