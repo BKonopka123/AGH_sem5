@@ -1,0 +1,1 @@
+gcc main.c mgmres.c -lm -O4 && ./a.out && python3 main.py

@@ -1,0 +1,3 @@
+interface Noise {
+    String makeNoise();
+}
