@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<architect-project version="1.0" appversion="1.0.9">
+ <project-name>erd</project-name>
+ <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
+ <project-data-sources>
+  <data-source id="DS0">
+   <property key="Logical" value="PlayPen Database" />
+  </data-source>
+ </project-data-sources>
+ <source-databases>
+ </source-databases>
+ <target-database id="ppdb" dbcs-ref="DS0">
+  <table id="TAB1" populated="true" UUID="0c4eb5f1-2102-4acf-9f93-ce775e3b9034" name="Zawodnik" objectType="TABLE" physicalName="Zawodnik" >
+   <remarks></remarks>
+   <folder id="FOLTAB11" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL2" populated="true" UUID="9df7253e-57c5-4442-ad96-23d2a51eaf57" autoIncrement="false" autoIncrementSequenceName="Zawodnik_zawodnik_id_seq" defaultValue="" name="zawodnik_id" nullable="0" physicalName="zawodnik_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL3" populated="true" UUID="94723627-e700-479c-841f-433dcb4be8f4" autoIncrement="false" autoIncrementSequenceName="Zawodnik_druzyna_id_seq" defaultValue="" name="druzyna_id" nullable="0" physicalName="druzyna_id" precision="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL4" populated="true" UUID="e1da2829-188c-497b-985a-1d4ec28ee4b5" autoIncrement="false" autoIncrementSequenceName="Zawodnik_imie_seq" defaultValue="" name="imie" nullable="0" physicalName="imie" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL5" populated="true" UUID="36550753-15fa-4f61-9d0c-22c27e9ed837" autoIncrement="false" autoIncrementSequenceName="Zawodnik_nazwisko_seq" defaultValue="" name="nazwisko" nullable="0" physicalName="nazwisko" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL6" populated="true" UUID="88a2433d-c3d4-4b70-be24-1c9c9e68365b" autoIncrement="false" autoIncrementSequenceName="Zawodnik_numer_seq" defaultValue="" name="numer" nullable="0" physicalName="numer" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL7" populated="true" UUID="e2111904-4a42-48d6-bf76-68bf551bbb22" autoIncrement="false" autoIncrementSequenceName="Zawodnik_pozycja_seq" defaultValue="" name="pozycja" nullable="0" physicalName="pozycja" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL8" populated="true" UUID="e41e3e77-205e-4368-a2a8-bd9d11aaa7e1" autoIncrement="false" autoIncrementSequenceName="Zawodnik_strzelone_bramki_seq" defaultValue="NULL" name="strzelone_bramki" nullable="1" physicalName="strzelone_bramki" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL9" populated="true" UUID="9e2aed83-c1f9-498b-8b75-b7db5524e73a" autoIncrement="false" autoIncrementSequenceName="Zawodnik_czy_czerwona_seq" defaultValue="FALSE" name="czy_czerwona" nullable="0" physicalName="czy_czerwona" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="16" userDefinedTypeUUID="a26374aa-3026-4bb8-b564-eb2e186dfa5d" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB13" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB12" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB14" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX10" populated="true" UUID="53a9ef28-c261-4691-9317-0fff7829a0cf" clustered="false" name="zawodnik_pk" physicalName="zawodnik_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC11" populated="true" UUID="ae0f17a2-4640-4aa9-bbb0-c86bfcb77ca2" ascendingOrDescending="UNSPECIFIED" column-ref="COL2" name="zawodnik_id" physicalName="zawodnik_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB12" populated="true" UUID="a767f2c1-2689-4e10-898c-f956029bbe2a" name="Druzyna" objectType="TABLE" physicalName="Druzyna" >
+   <remarks></remarks>
+   <folder id="FOLTAB121" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL13" populated="true" UUID="32db741c-e2f6-40a6-b9bd-ca715dc7d42a" autoIncrement="false" autoIncrementSequenceName="Druzyna_druzyna_id_seq" defaultValue="" name="druzyna_id" nullable="0" physicalName="druzyna_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL14" populated="true" UUID="f3aa21a4-ff96-410a-80de-5fb1f448b704" autoIncrement="false" autoIncrementSequenceName="Druzyna_nazwa_seq" defaultValue="" name="nazwa" nullable="0" physicalName="nazwa" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL15" populated="true" UUID="0c8ad9ed-8721-4762-aa14-c6ca55f18a96" autoIncrement="false" autoIncrementSequenceName="Druzyna_data_zalozenia_seq" defaultValue="" name="data_zalozenia" nullable="0" physicalName="data_zalozenia" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks></remarks>
+    </column>
+    <column id="COL16" populated="true" UUID="19ee7e9c-11d0-4acb-a075-45e1211a4d91" autoIncrement="false" autoIncrementSequenceName="Druzyna_miasto_seq" defaultValue="" name="miasto" nullable="0" physicalName="miasto" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    <column id="COL17" populated="true" UUID="cab2db94-47a3-4a19-9e2e-340117a0153d" autoIncrement="false" autoIncrementSequenceName="Druzyna_punkty_seq" defaultValue="0" name="punkty" nullable="1" physicalName="punkty" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB123" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB122" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB124" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX18" populated="true" UUID="7c096885-1a7b-4d78-a1ce-a44a7ce0bb60" clustered="false" name="druzyna_pk" physicalName="druzyna_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC19" populated="true" UUID="56a38831-789e-4f2c-8c84-fe2cee64fa56" ascendingOrDescending="UNSPECIFIED" column-ref="COL13" name="druzyna_id" physicalName="druzyna_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB20" populated="true" UUID="d9e01076-fe89-46d5-a136-740bcaf4df79" name="Mecz" objectType="TABLE" physicalName="Mecz" >
+   <remarks></remarks>
+   <folder id="FOLTAB201" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL21" populated="true" UUID="8726d133-2542-46f2-965c-39da8ea2fbbd" autoIncrement="false" autoIncrementSequenceName="Mecz_mecz_id_seq" defaultValue="" name="mecz_id" nullable="0" physicalName="mecz_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL22" populated="true" UUID="bb05946f-fe18-4359-81c0-6b7c9404f65f" autoIncrement="false" autoIncrementSequenceName="Druzyna_druzyna_gospodarze_seq" defaultValue="" name="druzyna_gospodarze" nullable="0" physicalName="druzyna_gospodarze" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL23" populated="true" UUID="e67e7c05-ab92-473e-a2ad-bb1c3c1d77b3" autoIncrement="false" autoIncrementSequenceName="druzyna_przyjezdni_seq" defaultValue="" name="druzyna_przyjezdni" nullable="0" physicalName="druzyna_przyjezdni" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL24" populated="true" UUID="41f19a5e-a770-4c88-ad73-52b45fbc52a5" autoIncrement="false" autoIncrementSequenceName="Mecz_data_meczu_seq" defaultValue="" name="data_meczu" nullable="0" physicalName="data_meczu" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+     <remarks></remarks>
+    </column>
+    <column id="COL25" populated="true" UUID="0f84f2c0-265b-47b6-9865-c32a17b6d323" autoIncrement="false" autoIncrementSequenceName="Mecz_czerwone_ilosc_seq" defaultValue="0" name="czerwone_ilosc" nullable="1" physicalName="czerwone_ilosc" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL26" populated="true" UUID="c87dec7b-3eb8-4a72-a9f6-ceff0ec93cbd" autoIncrement="false" autoIncrementSequenceName="Mecz_bramki_gospodarzy_seq" defaultValue="0" name="bramki_gospodarzy" nullable="1" physicalName="bramki_gospodarzy" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL27" populated="true" UUID="a7acf7e4-d86d-4ef4-a38a-732ca19be89b" autoIncrement="false" autoIncrementSequenceName="Mecz_bramki_przyjezdnych_seq" defaultValue="0" name="bramki_przyjezdnych" nullable="1" physicalName="bramki_przyjezdnych" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL28" populated="true" UUID="4e38257a-f4be-479f-a089-44f8cd9d7691" autoIncrement="false" autoIncrementSequenceName="Mecz_wynik_seq" defaultValue="NULL" name="wynik" nullable="1" physicalName="wynik" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB203" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB202" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB204" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX29" populated="true" UUID="53a62360-e476-41d0-a84f-8cd78844f134" clustered="false" name="mecz_pk" physicalName="mecz_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC30" populated="true" UUID="27f876bf-55a3-44d8-9768-8cba95ad0afa" ascendingOrDescending="UNSPECIFIED" column-ref="COL21" name="mecz_id" physicalName="mecz_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB31" populated="true" UUID="e8c8bc58-d771-4a46-b1c9-2a67b8ff452c" name="Bramka" objectType="TABLE" physicalName="Bramka" >
+   <remarks></remarks>
+   <folder id="FOLTAB311" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL32" populated="true" UUID="7603b99f-e9a7-4d51-841d-430153a8c450" autoIncrement="false" autoIncrementSequenceName="Bramka_bramka_id_seq" defaultValue="" name="bramka_id" nullable="0" physicalName="bramka_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL33" populated="true" UUID="d027ef93-3c2a-4fde-9454-8fc6ae637aa5" autoIncrement="false" autoIncrementSequenceName="Zawodnik_zawodnik_id_seq_1" defaultValue="" name="zawodnik_id" nullable="0" physicalName="zawodnik_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL34" populated="true" UUID="4dde491d-96e2-4044-88fd-8349c0bbed32" autoIncrement="false" autoIncrementSequenceName="Mecz_mecz_id_seq_1" defaultValue="" name="mecz_id" nullable="0" physicalName="mecz_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB313" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB312" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB314" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX35" populated="true" UUID="213613e9-02b7-45f4-95ff-3dcede3f02f4" clustered="false" name="bramka_pk" physicalName="bramka_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC36" populated="true" UUID="57080b31-52ee-4a6a-bac0-ba4db7e90822" ascendingOrDescending="UNSPECIFIED" column-ref="COL32" name="bramka_id" physicalName="bramka_id" />
+    </index>
+   </folder>
+  </table>
+  <table id="TAB37" populated="true" UUID="9d0cc778-3168-4d8b-87f1-27e29e462d75" name="Czerwona_kartka" objectType="TABLE" physicalName="Czerwona_kartka" >
+   <remarks></remarks>
+   <folder id="FOLTAB371" populated="true" name="Columns" physicalName="Columns" type="1">
+    <column id="COL38" populated="true" UUID="36d7c712-407f-4722-bfab-44f8142755e7" autoIncrement="false" autoIncrementSequenceName="Czerwona_kartka_czerwona_kartka_id_seq" defaultValue="" name="czerwona_kartka_id" nullable="0" physicalName="czerwona_kartka_id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL39" populated="true" UUID="77862f64-9a69-46a9-93e1-ea300f292c1a" autoIncrement="false" autoIncrementSequenceName="Zawodnik_zawodnik_id_seq_2" defaultValue="" name="zawodnik_id" nullable="0" physicalName="zawodnik_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    <column id="COL40" populated="true" UUID="e8aed53a-8fb5-4705-b620-66dd5cf04c81" autoIncrement="false" autoIncrementSequenceName="Mecz_mecz_id_seq_2" defaultValue="" name="mecz_id" nullable="0" physicalName="mecz_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+     <remarks></remarks>
+    </column>
+    </folder>
+    <folder id="FOLTAB373" populated="true" name="Exported Keys" physicalName="Exported Keys" type="3">
+    </folder>
+    <folder id="FOLTAB372" populated="true" name="Imported Keys" physicalName="Imported Keys" type="2">
+    </folder>
+    <folder id="FOLTAB374" populated="true" name="Indices" physicalName="Indices" type="4">
+    <index id="IDX41" populated="true" UUID="09320555-ae48-4429-8219-e49c713ded0d" clustered="false" name="czerwona_kartka_pk" physicalName="czerwona_kartka_pk" primaryKeyIndex="true" unique="false" >
+     <index-column id="IDC42" populated="true" UUID="82ce24eb-e423-451a-bf8e-fcb12885e8dd" ascendingOrDescending="UNSPECIFIED" column-ref="COL38" name="czerwona_kartka_id" physicalName="czerwona_kartka_id" />
+    </index>
+   </folder>
+  </table>
+  <relationships>
+   <relationship id="REL43" populated="true" UUID="edac11b4-0ae1-4a87-a412-ab11e68b8fbe" deferrability="7" deleteRule="3" fk-table-ref="TAB31" fkCardinality="7" identifying="true" name="Zawodnik_Bramka_fk" physicalName="Zawodnik_Bramka_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP44" populated="true" UUID="1dc8bc02-b67a-4265-9bf7-794625708f05" fk-column-ref="COL33" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL45" populated="true" UUID="b8bf25da-f20c-4135-bf57-ff629404925f" deferrability="7" deleteRule="3" fk-table-ref="TAB37" fkCardinality="7" identifying="true" name="Zawodnik_Czerwona_kartka_fk" physicalName="Zawodnik_Czerwona_kartka_fk" pk-table-ref="TAB1" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP46" populated="true" UUID="1f408525-7df6-43eb-af35-f8856cb1ff17" fk-column-ref="COL39" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL2" />
+   </relationship>
+   <relationship id="REL47" populated="true" UUID="80b9845e-f36f-4253-8eb9-b42c2016374e" deferrability="7" deleteRule="3" fk-table-ref="TAB1" fkCardinality="7" identifying="true" name="Druzyna_Zawodnik_fk" physicalName="Druzyna_Zawodnik_fk" pk-table-ref="TAB12" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP48" populated="true" UUID="3e66edb4-5699-4f4a-8ba5-3effbbff07aa" fk-column-ref="COL3" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL13" />
+   </relationship>
+   <relationship id="REL49" populated="true" UUID="74c8b189-ffa3-4208-a7a8-e950a735100b" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="true" name="Druzyna_Mecz_fk" physicalName="Druzyna_Mecz_fk" pk-table-ref="TAB12" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP50" populated="true" UUID="efdc8a69-fd2c-4e0f-bc72-d5f9f22857e1" fk-column-ref="COL22" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL13" />
+   </relationship>
+   <relationship id="REL51" populated="true" UUID="11d2b5c8-af03-4938-966e-6d0baf2f6413" deferrability="7" deleteRule="3" fk-table-ref="TAB20" fkCardinality="7" identifying="true" name="Druzyna_Mecz_fk1" physicalName="Druzyna_Mecz_fk1" pk-table-ref="TAB12" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP52" populated="true" UUID="09ae7c52-ba3f-447d-a424-b415cea4d9ac" fk-column-ref="COL23" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL13" />
+   </relationship>
+   <relationship id="REL53" populated="true" UUID="08bfb6a2-dd42-460e-9a4e-f544e07241c3" deferrability="7" deleteRule="3" fk-table-ref="TAB31" fkCardinality="7" identifying="true" name="Mecz_Bramka_fk" physicalName="Mecz_Bramka_fk" pk-table-ref="TAB20" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP54" populated="true" UUID="271ab6d9-dcd7-4ba3-a422-6bcd7daff44e" fk-column-ref="COL34" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL21" />
+   </relationship>
+   <relationship id="REL55" populated="true" UUID="8ed44954-2eba-44c7-8aab-d7f7ca064a58" deferrability="7" deleteRule="3" fk-table-ref="TAB37" fkCardinality="7" identifying="true" name="Mecz_Czerwona_kartka_fk" physicalName="Mecz_Czerwona_kartka_fk" pk-table-ref="TAB20" pkCardinality="2" updateRule="3" >
+    <column-mapping id="CMP56" populated="true" UUID="7a935554-6f29-42ef-a953-e57a8338991a" fk-column-ref="COL40" name="Column Mapping" physicalName="Column Mapping" pk-column-ref="COL21" />
+   </relationship>
+  </relationships>
+ </target-database>
+ <ddl-generator type="ca.sqlpower.architect.ddl.GenericDDLGenerator" allow-connection="true"> </ddl-generator>
+ <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
+ <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
+ <play-pen zoom="1.0" viewportX="0" viewportY="0" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+  <table-pane table-ref="TAB1" x="124" y="381" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB12" x="614" y="361" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB20" x="1039" y="347" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB31" x="631" y="721" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB37" x="625" y="74" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-link relationship-ref="REL47" pkConnection="0.5855855855855856" fkConnection="0.2830188679245283" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="18"/>
+  <table-link relationship-ref="REL49" pkConnection="0.3153153153153153" fkConnection="0.3081761006289308" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL51" pkConnection="0.4954954954954955" fkConnection="0.4339622641509434" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL53" pkConnection="0.23793103448275862" fkConnection="0.625" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL43" pkConnection="0.859504132231405" fkConnection="0.3253012048192771" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL55" pkConnection="0.2389937106918239" fkConnection="1.0" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="66"/>
+  <table-link relationship-ref="REL45" pkConnection="0.5974842767295597" fkConnection="0.25316455696202533" rLineColor="0x000000" pkLabelText="" fkLabelText="" orientation="33"/>
+ </play-pen>
+ <critic-manager>
+  <critic-grouping platformType="Generic" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PrimaryKeyCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.RelationshipMappingTypeCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.EmptyRelationshipCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.AlphaNumericSequenceNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetDefaultOnColumnWithNoDefaultCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SetNullOnNonNullableColumnCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DuplicateNameCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="DB2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.DB2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="H2" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.H2UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="HSQLDB" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.HSQLDBUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="MySQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLCommentCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.MySQLUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="Oracle" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OraclePhysicalNameCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleReservedWordsCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.OracleUnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="PostgreSQL" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.PostgreSQLReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerUnsupportedFeaturesCritic" severity="ERROR"/>
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServerReservedWordsCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2000" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2000UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+  <critic-grouping platformType="SQL Server 2005" enabled="true">
+   <critic-settings class="ca.sqlpower.architect.ddl.critic.impl.SQLServer2005UnsupportedFeaturesCritic" severity="ERROR"/>
+  </critic-grouping>
+ </critic-manager>
+ <profiles topNCount="10">
+  </profiles>
+  <olap>
+  </olap>
+  <olap-gui>
+  </olap-gui>
+</architect-project>
