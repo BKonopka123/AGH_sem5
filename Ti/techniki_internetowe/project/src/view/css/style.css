@@ -1,0 +1,290 @@
+/*Background gradient and body specification*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgb(255,215,219);
+    background: linear-gradient(180deg, rgba(255,215,219,1) 0%, rgba(255,247,247,1) 64%);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*Options part*/
+div.options_box{
+    display: block;
+    width: auto;
+    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 5px;
+}
+
+div.options_box_under{
+    display: inline-block;
+    width: 14%;
+    vertical-align: middle;
+    background: rgb(255, 192, 198);
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(74, 74, 74);
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    text-align: center;
+    color: rgb(186, 94, 103);
+}
+
+/*Links specification*/
+a:link
+{
+    color: rgb(186, 94, 103);
+    text-decoration: none;
+}
+
+a:visited
+{
+    color: rgb(186, 94, 103);
+    text-decoration: none;
+}
+
+a:hover
+{
+    letter-spacing: .5px;
+    word-spacing: 5.4px;
+    background: rgb(186, 94, 103);
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(74, 74, 74);
+    color: rgb(255, 192, 198);
+    padding: 5px;
+}
+
+a:active
+{
+    letter-spacing: .5px;
+    word-spacing: 5.4px;
+    background: rgb(186, 94, 103);
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(74, 74, 74);
+    color: rgb(255, 192, 198);
+    padding: 5px;
+}
+
+/*Main header part*/
+div.main_header{
+    display: block;
+    background: rgb(255, 192, 198);
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(74, 74, 74);
+    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 5px;
+}
+
+span.first_header_text{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: rgb(186, 94, 103);
+    text-shadow: 2px -2px 1px rgb(237, 237, 237);
+    font-size: 50px;
+}
+
+span.second_header_text{
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: rgb(186, 94, 103);;
+    font-size: 25px;
+}
+
+/*Animation part*/
+#animation_box{
+    display: block;
+    background: rgb(255, 192, 198);
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(74, 74, 74);
+    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+}
+
+canvas{
+    background: rgb(255,215,219);
+    background: linear-gradient(180deg, rgba(255,215,219,1) 0%, rgba(255,247,247,1) 64%);
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px rgb(74, 74, 74);
+}
+
+div.animation_text{
+    display: block;
+    margin: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: rgb(255,215,219);
+    background: linear-gradient(180deg, rgba(255,215,219,1) 0%, rgba(255,247,247,1) 64%);
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px rgb(74, 74, 74);
+    font-size: 20px;
+}
+
+div.animation_form{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*Information part*/
+#information_box{
+    display: block;
+    background: rgb(255, 192, 198);
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(74, 74, 74);
+    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 5px;
+    text-align: center;
+    height: auto;
+}
+
+div.information_header{
+    display: block;
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    color: rgb(186, 94, 103);
+    text-shadow: 2px -2px 1px rgb(237, 237, 237);
+    font-size: 40px;
+}
+
+div.information_text_middle{
+    display: block;
+    margin: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: rgb(255,215,219);
+    background: linear-gradient(180deg, rgba(255,215,219,1) 0%, rgba(255,247,247,1) 64%);
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px rgb(74, 74, 74);
+    font-size: 20px;
+}
+
+div.information_photo_middle{
+    display: block;
+    margin: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    box-shadow: inset 2px 2px 5px rgb(74, 74, 74);
+    font-size: 20px;
+}
+
+
+/*Footer part*/
+div.footer{
+    display: block;
+    background: rgb(255, 192, 198);
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px rgb(74, 74, 74);
+    margin: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    padding: 5px;
+}
+
+div.footer_text{
+    text-align: center;
+    color: rgb(186, 94, 103);
+}
+
+/*Responses part*/
+#response_animation{
+    display: block;
+    color: rgb(186, 94, 103);
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+#response_register{
+    display: block;
+    color: rgb(186, 94, 103);
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+#response_login{
+    display: block;
+    color: rgb(186, 94, 103);
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+#user_information{
+    text-align: center;
+}
+
+.tableOne{
+    margin:auto;
+}
+
+/*Forms part*/
+input[type=text]{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid rgb(186, 94, 103);
+    border-radius: 10px;
+    background: rgb(255,215,219);
+    background: linear-gradient(180deg, rgba(255,215,219,1) 0%, rgba(255,247,247,1) 64%);
+    text-align: center;
+}
+
+input[type=password]{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid rgb(186, 94, 103);
+    border-radius: 10px;
+    background: rgb(255,215,219);
+    background: linear-gradient(180deg, rgba(255,215,219,1) 0%, rgba(255,247,247,1) 64%);
+    text-align: center;
+}
+
+input[type=button]{
+    box-sizing: border-box;
+    border: 2px solid rgb(186, 94, 103);
+    border-radius: 10px;
+    background: rgb(186, 94, 103);
+    color:rgb(237, 237, 237);
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
+
+input[type=button]:hover{
+    box-sizing: border-box;
+    border: 2px solid rgb(186, 94, 103);
+    border-radius: 10px;
+    background: rgb(237, 237, 237);
+    color:rgb(186, 94, 103);
+    margin: 3px;
+    padding: 3px;
+    text-align: center;
+}
