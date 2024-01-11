@@ -45,7 +45,7 @@
 
     <div id="animation_box">
         <canvas id="animation_canvas" width="900" height="600">
-
+            
         </canvas>
 
         <div class="animation_text">
@@ -60,6 +60,10 @@
             Zakres czasu otwarcia migawki: 8-1000
             <br>
             Zakres szerokości przesłony: 1.7-8
+            <br>
+            wynik = 10 * (zewnetrzne_swiatlo + 5) * iso/50 * 1/(czas_migawki/100) * szerokość_przesłony
+            <br>
+            wynik powinien zawierać się w wartości pomiędzy 1000 a 3000 
         </div>
         <div class="animation_form">
             <form name="animation">

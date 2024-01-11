@@ -39,17 +39,147 @@ function aanimation(){
 function animation_draw(zewnetrzne_swiatlo, iso, time, f){
     var canvas = document.getElementById("animation_canvas");
     var ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
-    ctx.strokeStyle = "#000000";
 
-    ctx.moveTo(0, 0);
-    ctx.lineTo(300, 300);
-    ctx.stroke();
+    var image = new Image();
+    image.src = "src/view/photos/animacja.png";
+
+    var r = 5 * zewnetrzne_swiatlo;
+
+    var wynik = 10 * (zewnetrzne_swiatlo + 5) * iso/50 * 1/(time/100) * f; 
+    console.log(wynik);
+
+    image.onload = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(image, 10, 40);
+        ctx.beginPath();
+        ctx.fillStyle = "#0000F7";
+        ctx.globalAlpha = 0.2;
+        ctx.fillRect(0, 325-10*zewnetrzne_swiatlo, 200, 20*zewnetrzne_swiatlo );
+        var flag;
+        if (wynik >=0 && wynik <= 1000){
+            flag = 10;
+        }
+        else if(wynik > 1000 && wynik <= 3000){
+            flag = 20;
+        }
+        else if(wynik > 3000 && wynik <= 10000){
+            flag = 30;
+        }
+        else if(wynik > 10000 && wynik <= 50000){
+            flag = 40;
+        }
+        else if(wynik > 50000 && wynik <= 100000){
+            flag = 50;
+        }
+        else if(wynik > 100000 && wynik <= 400000){
+            flag = 60;
+        }
+        else if(wynik > 400000 && wynik <= 1000000){
+            flag = 70;
+        }
+        else{
+            flag = 80;
+        }
+        ctx.moveTo(200, 325-(flag/2));
+        ctx.lineTo(588+((flag/2)/1.1106), 325-(flag/2));
+        ctx.lineTo(588-((flag/2)/1.1106), 325+(flag/2));
+        ctx.lineTo(200, 325+(flag/2));
+        ctx.lineTo(200, 325-(flag/2));
+
+        ctx.moveTo(588+((flag/2)/1.1106), 325-(flag/2));
+        ctx.lineTo(588+((flag/2)/1.1106), 96+((flag/2)/(1.732)));
+        ctx.lineTo(588-((flag/2)), 96-((flag/2)/(1.732)));
+        ctx.lineTo(588-((flag/2)), 325-(flag/2));
+        ctx.lineTo(588+((flag/2)/1.1106), 325-(flag/2));
+        
+        ctx.moveTo(588-((flag/2)), 96-((flag/2)/(1.732)));
+        ctx.lineTo(485-(flag/2 * 0.3249), 190-flag/2);
+        ctx.lineTo(485+(flag/2 * 0.3249), 190+flag/2 );
+        ctx.lineTo(588+((flag/2)/1.1106), 96+((flag/2)/(1.732)));
+        ctx.lineTo(588-((flag/2)), 96-((flag/2)/(1.732)));
+        
+        ctx.moveTo(485-(flag/2 * 0.3249), 190-flag/2);
+        ctx.lineTo(800, 190-flag/2);
+        ctx.lineTo(800, 190+flag/2);
+        ctx.lineTo(485+(flag/2 * 0.3249), 190+flag/2 );
+        ctx.lineTo(485-(flag/2 * 0.3249), 190-flag/2);
+        ctx.fill();
+        ctx.globalAlpha = 1.0;
+
+        // Define variables for circle position and movement
+        var circleX = 200;
+        var circleY = 325;
+        var circleRadius = flag / 2;
+        var dx = 1; // Horizontal movement speed
+        var dy = 0; // Vertical movement speed
+        var flag = false;
+
+        function animate() {
+            ctx.beginPath();
+            ctx.fillStyle = "#0000FF";
+            ctx.arc(circleX, circleY, circleRadius, 0, Math.PI * 2);
+            ctx.fill();
+
+            circleX += dx;
+            circleY += dy;
+            if(circleX  == 588 && circleY == 325) {
+                dx = 0;
+                dy = -1;
+            }
+            if(circleY == 96 && circleX == 588) {
+                dx = -1;
+                dy = 1;
+            }
+            if(circleY == 190 && circleX == 494) {
+                dx = 1;
+                dy = 0;
+            }
+            if(circleX == 800 && circleY == 190) {
+                dx = 0;
+                dy = 0;
+            }
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+
+        if(wynik >=1000 && wynik <= 3000){
+            ctx.fillStyle = "#048912";
+            ctx.fillRect(848, 173, 30, 30);
+            ctx.font = "bold 18px Arial";
+            ctx.fillText(wynik + '', 430, 560);
+        }
+        else{
+            ctx.fillStyle = "#FF0808";
+            ctx.fillRect(848, 173, 30, 30);
+            ctx.font = "bold 18px Arial";
+            ctx.fillText(wynik + '', 430, 560);
+        }
+        ctx.strokeStyle = "rgba( 255, 255, 255, 0.0 )";
+        ctx.stroke();
+    };
+
+
 }
+
+
+function animation_draw_start() {
+    var canvas = document.getElementById("animation_canvas");
+    var ctx = canvas.getContext("2d");
+    var image = new Image();
+    image.src = "src/view/photos/animacja.png";
+
+    image.onload = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(image, 10, 40);
+    };
+}
+
 
 //Funkcja javascript obsługująca przyciski wykonujące animację
 function animation_values(){
+    animation_draw_start();
+
     //Przygotoanie danych do wysłania
     var json_data = "{\"light\":\"" + 1 + "\",\"iso\":\"" + 50 + "\",\"time\":\"" + 8 + "\",\"f\":\"" + 1.7 + "\"}";
     var msg = "data=" + encodeURIComponent(json_data);
