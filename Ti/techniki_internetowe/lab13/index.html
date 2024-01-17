@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 13 - JWT</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="loginPage">
+        <h2>Login</h2>
+        <label for="username">Login:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Haslo:</label>
+        <input type="text" id="password" name="password" required>
+        <br>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="authenticatedPage" style="display:none;">
+        <h2>Strona Zautoryzowana</h2>
+        <button onclick="getBooks()">Wyswietl ksiazki</button>
+        <button onclick="refreshhToken()">Odswiez token</button>
+        <button onclick="logout()">Wyloguj</button>
+    </div>
+
+    <div id="tokens" style="display:none;">
+        <h2>Tokeny</h2>
+        <p>Access Token: <span id="accessToken"></span></p>
+        <p>Refresh Token: <span id="refreshToken"></span></p>
+    </div>
+
+    <div id="books"  style="display:none;">
+        <h2>Ksiazki</h2>
+        <span id="booksList"></span>
+    </div>
+</body>
+</html>
